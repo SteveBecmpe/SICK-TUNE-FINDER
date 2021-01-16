@@ -5,15 +5,18 @@ $("#artistSearch").on("click", function (event) {
 });
 
 function SearchArtist(artist) {
-  // This is our API key. Add your own API key between the ""
-  let APIKey = "&appid=523532";
-  let ADBAPITOKEN = "CDCFB";
-  // let NumOfDays = "&cnt=5";
-  // let testURL = "https://www.theaudiodb.com/api/v1/json/1/search.php?s=coldplay" + APIKey;
 
-  let baseURL = "https://theaudiodb.com/api/v1/json/1/search.php?s=";
+    // This is our API key. Add your own API key between the ""
+    let APIKey = "&appid=523532";
+    let ADBAPITOKEN = "CDCFB";
+    let wildCard = "%";
+    // let NumOfDays = "&cnt=5";
+    // let testURL = "https://www.theaudiodb.com/api/v1/json/1/search.php?s=coldplay" + APIKey;
 
-  let searchURL = baseURL + artist;
+    let baseURL = "https://theaudiodb.com/api/v1/json/1/search.php?s=";
+  
+    let searchURL = baseURL + artist+wildCard;
+  
 
   //Calls API Response
   $.ajax({
