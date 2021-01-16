@@ -1,11 +1,11 @@
 $("#artistSearch").on("click", function (event) {
-    let artist = $("#StartSearchValue").val();
-    // console.log(artist);
-    SearchArtist(artist);
+  let artist = $("#StartSearchValue").val();
+  // console.log(artist);
+  SearchArtist(artist);
 });
 
-
 function SearchArtist(artist) {
+
     // This is our API key. Add your own API key between the ""
     let APIKey = "&appid=523532";
     let ADBAPITOKEN = "CDCFB";
@@ -18,16 +18,17 @@ function SearchArtist(artist) {
     let searchURL = baseURL + artist+wildCard;
   
 
-    
-    $.ajax({
-        url: searchURL,
-        method: "GET"
-    }).then(function (response) {
-        console.log(searchURL);
-        // console.log(testURL);
-        // console.log("response object " +response);
-        console.log(response);
-
-    });
-
-};
+  //Calls API Response
+  $.ajax({
+    url: searchURL,
+    method: "GET",
+  }).then(function (response) {
+    console.log(searchURL);
+    // console.log(testURL);
+    // console.log("response object " +response);
+    console.log(response);
+    $("#genre").text(response.artists[0].strStyle);
+    $("#country").text(response.artists[0].strCountry);
+    $("#artistBio").text(response.artists[0].strBiographyEN);
+  });
+}

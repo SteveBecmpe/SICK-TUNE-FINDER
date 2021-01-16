@@ -36,11 +36,16 @@
         grid-row-start: 1;
         color: limegreen;
         text-align: center;
+        font-size: 75px;
   }
 
   .header {
       border-radius: 25px;
   }
+
+    h3 { 
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
   
   @media screen and (max-width: 60em) {
     .left {
@@ -55,6 +60,7 @@
   .left{
       text-align: center;
       border-radius: 25px;
+      font-size: 25px;
       
   }
   
@@ -72,6 +78,7 @@
   .middle {
       text-align: center;
       border-radius: 25px;
+      font-size: 25px;
       
   }
   
@@ -87,15 +94,17 @@
 
   .right {
       border-radius: 25px;
+      text-align: center;
   }
   
-  .footer {
+
+  .holy-grail-footer {
     -ms-grid-column: 1;
         grid-column-start: 1;
     grid-column-end: 4;
   }
   
-  .footer {
+  .holy-grail-footer {
       border-radius: 25px;
   }
-  
+ 
