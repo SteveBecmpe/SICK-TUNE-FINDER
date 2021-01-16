@@ -93,6 +93,7 @@
   }
 
   .right {
+      backface-visibility: inherit;
       border-radius: 25px;
       text-align: center;
   }
