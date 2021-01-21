@@ -6,10 +6,13 @@ $("#artistSearch").on("click", function (event) {
   SearchArtist(artist);
 });
 
-$("#SearchResults").on("click", function (event) {
-  // preventDefualt();
-  let artistAlbum = $("#SearchResults").text();
-  // console.log(artist);
+$(document).on("click", ".artistbtn", function(event){
+// $("#SearchResults").on("click", function (event) {
+  let artistAlbum = $(this).attr("value");
+  // alert(tempCL);
+  // event.preventDefault();
+  // let artistAlbum = $(this).html();
+  // console.log(artistAlbum);
   SearchAlbums(artistAlbum);
 });
 
@@ -46,7 +49,7 @@ function SearchArtist(artist) {//starts at input with artist ends at display sea
     for (let i = 0; i < response.artists.length; i++) {
       console.log(response.artists[i].strArtist);
       let nextButton = $(`
-      <button class="button">${response.artists[i].strArtist}</button>
+      <button class="button artistbtn" value="${response.artists[i].strArtist}">${response.artists[i].strArtist}</button>
       `)
       $("#SearchResults").append(nextButton);
     }
