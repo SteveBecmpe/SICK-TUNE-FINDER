@@ -3,6 +3,7 @@
 
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
@@ -37,55 +38,79 @@
 
         <div class="middle id=" searchResults">
 
-            <div class="right">
-                <h3>Search Results
-                    <br>
-                    Choose One
-                </h3>
-                <button class="button">Artist Bio</button>
-                <button class="button">Discography</button>
-                <button class="button">Lyrics</button>
 
-            </div>
+    <div class="left">
+      <h3>Inputs</h3>
+      <input class="input" type="text" placeholder="Text input" id="StartSearchValue">
+      <br>
+      <button class="button" id="artistSearch">Artist</button>
+      <button class="button" id="albumSearch">Album</button>
+      <button class="button" id="songNameSearch">Song Name</button>
+      <p>
+      <ul>
+        Try searching by Artist, Album, or just a Song Name!
+      </ul>
+      </p>
+      <div id="SearchResults">
 
-        </div>
+      </div>
+    </div>
 
+    <div class="middle">
+
+      <div class="right">
+        <h3>Search Results
+          <br>
+          Choose One
+        </h3>
+        <button class="button">Artist Bio</button>
+        <button class="button">Discography</button>
+        <button class="button">Lyrics</button>
+
+      </div>
+     
 
 
         <div class="middle" id="outputs">
             <h3>Outputs</h3>
             <div class="right">
 
-
-                <ul>
-                    <li><a href="#">Artist Bio</a></li>
-                    <li><a href="#">Discography</a></li>
-                    <li><a href="#">TBD Space</a></li>
-                </ul>
-
-            </div>
-            <p id="genre">
-            </p>
-            <p id="country">
-            </p>
-            <p id="artistBio">
-            </p>
-
-        </div>
+  
 
 
 
+    <div class="middle">
+      <h3>Outputs</h3>
+      <div class="right">
+        <ul>
+          <li><a href="#">Artist Bio</a></li>
+          <li><a href="#">Discography</a></li>
+          <li><a href="#">TBD Space</a></li>
+        </ul>
+        <div id="outputs"></div> 
+      </div>
+      <p id="genre">
+      </p>
+      <p id="country">
+      </p>
+      <p id="artistBio">
+      </p>
 
     </div>
 
 
-    <div class="footer">
-        <h3>Footer</h3>
-    </div>
-    </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="./script.js"></script>
+
+  </div>
+
+
+  <div class="footer">
+    <h3>Footer</h3>
+  </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="./script.js"></script>
 </body>
 
 </html>
