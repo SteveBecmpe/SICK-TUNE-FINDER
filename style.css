@@ -18,7 +18,7 @@
     }
   }
   
-  .header,
+  
   .left,
   .middle,
   .right,
@@ -34,17 +34,24 @@
     grid-column-end: 4;
     -ms-grid-row: 1;
         grid-row-start: 1;
-        color: limegreen;
+        color: turquoise;
         text-align: center;
         font-size: 75px;
+        background: rgba(0, 0, 0, 0.0);
+        
+        
   }
 
   .header {
-      border-radius: 25px;
+    font-stretch: extra-expanded;
+     
+       
   }
 
     h3 { 
         font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-style: italic;
+        font-size: 75;
     }
   
   @media screen and (max-width: 60em) {
@@ -58,9 +65,12 @@
   }
 
   .left{
+      color: white;
       text-align: center;
       border-radius: 25px;
       font-size: 25px;
+      background: rgba(0, 0, 0, 0.7);
+      
       
   }
   
@@ -76,9 +86,11 @@
   }
 
   .middle {
+      color: white;
       text-align: center;
       border-radius: 25px;
       font-size: 25px;
+      background: rgba(0, 0, 0, 0.7);
       
   }
   
@@ -93,19 +105,22 @@
   }
 
   .right {
-      backface-visibility: inherit;
+      color: white;
       border-radius: 25px;
       text-align: center;
+      background: rgba(0, 0, 0, 0.7);
   }
   
 
-  .holy-grail-footer {
+  .footer {
     -ms-grid-column: 1;
         grid-column-start: 1;
     grid-column-end: 4;
   }
   
-  .holy-grail-footer {
+  .footer {
+      color: turquoise;
       border-radius: 25px;
+      background: rgba(0, 0, 0, 0.7);
   }
  
