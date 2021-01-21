@@ -3,30 +3,40 @@
 
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
-  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-  <link rel="stylesheet" href="style.css">
 
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
 </head>
-
-
-<style>
-  body {
-    background-image: url("https://images.unsplash.com/photo-1549477606-43a329b26066?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
-  }
-</style>
 
 
 
 <body>
 
-  <div class="grid">
-    <div class="header">
-      <h3>Sick Tune Finder</h3>
-    </div>
+    <div class="grid">
+        <div class="header">
+            <h3>Sick Tune Finder</h3>
+        </div>
+
+
+        <div class="left">
+            <h3>Inputs</h3>
+            <input class="input" type="text" placeholder="Text input" id="StartSearchValue">
+            <br>
+            <button class="button" id="artistSearch">Artist</button>
+            <button class="button" id="albumSearch">Album</button>
+            <button class="button" id="songNameSearch">Song Name</button>
+            <p>
+            <ul>
+                Try searching by Artist, Album, or just a Song Name!
+            </ul>
+            </p>
+        </div>
+
+        <div class="middle id=" searchResults">
 
 
     <div class="left">
@@ -60,7 +70,12 @@
       </div>
      
 
-    </div>
+
+        <div class="middle" id="outputs">
+            <h3>Outputs</h3>
+            <div class="right">
+
+  
 
 
 
