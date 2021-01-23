@@ -9,6 +9,12 @@ $(document).on("click", ".albumbtn", function (event) {
     SearchTracks(MMalbumID, MMalbumName);
 });
 
+// $(document).on("click", ".albumbtn", function (event) {
+//     let MMalbumID = $(this).attr("albumID");
+//     let MMalbumName = $(this).attr("value");
+//     SearchTracks(MMalbumID, MMalbumName);
+// });
+
 function SearchMMAlbums(LyricArtist) {
     console.log("inF Artist " + LyricArtist);
     let MMAPIKey = "&apikey=9ad329a114ae6adb6c4a2c27453f0710";
@@ -59,7 +65,7 @@ function SearchMMAlbums(LyricArtist) {
             let nextAlbumHeader = $(`
             <h3>Album Results for: ${LyricArtist}</h3>
             `);
-            $("#albumResults").append(nextAlbumHeader);
+            $("#albumResults").append(nextAlbumHeader);//---------------------------------------------------
             for (let i = 0; i < response.message.body.album_list.length; i++) {
                 let nextButton = $(`
             <button class="button albumbtn" value="${response.message.body.album_list[i].album.album_name}" artist="${LyricArtist}" albumID="${response.message.body.album_list[i].album.album_id}">${response.message.body.album_list[i].album.album_name}</button>
@@ -69,7 +75,7 @@ function SearchMMAlbums(LyricArtist) {
             let nextTracks = $(`
             <div id="TrackResults"></div>
             `);
-            $("#albumResults").append(nextTracks);
+            $("#SearchResults").append(nextTracks);
         });
     });
     // Calls Artist Info
@@ -99,7 +105,8 @@ function SearchTracks(MMalbumID, AlbumName) {
     let subTracksearchURL = "album.tracks.get?";
     //    let subArtistsearchURL = "artist.search?";
     let searchType = "&album_id=";
-    let resultCNT = "&page=1&page_size=2";
+    // let resultCNT = "&page=1&page_size=2";
+    let resultCNT = "&page=1";
     let responseFormat = "format=jsonp&callback=callback";
     let searchURL = baseURL + subTracksearchURL + responseFormat + searchType + MMalbumID + resultCNT + MMAPIKey;
     console.log(searchURL);
@@ -114,12 +121,12 @@ function SearchTracks(MMalbumID, AlbumName) {
         let nextAlbumHeader = $(`
         <h3>Track Results for: ${AlbumName}</h3>
         `);
-        $("#albumResults").append(nextAlbumHeader);
+        $("#TrackResults").append(nextAlbumHeader);
         for (let i = 0; i < response.message.body.track_list.length; i++) {
             let nextButton = $(`
         <button class="button trackbtn" artistName="${response.message.body.track_list[i].track.artist_name}" trackName="${response.message.body.track_list[i].track.track_name}">${response.message.body.track_list[i].track.track_name}</button>
         `)
-            $("#albumResults").append(nextButton);
+            $("#TrackResults").append(nextButton);
         }
     });
 
