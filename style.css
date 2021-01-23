@@ -19,20 +19,25 @@
   }
   
   body {
-    background-image: url("https://images.unsplash.com/photo-1549477606-43a329b26066?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
+    background-image: url("https://images.unsplash.com/photo-1607443359980-ea21b1a3b2b3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
 }
   
   .left,
   .middle,
-  .right,
   .footer {
     padding: 1rem;
     border: 1px solid #ededed;
     background-color: #ededed;
     overflow: scroll;
-    -moz-box-shadow: -7px -7px;
-        -webkit-box-shadow: -7px -7px;
-        box-shadow: skyblue -7px -7px;
+    box-shadow: skyblue -7px -7px;
+    background: linear-gradient(
+        to right bottom,
+        rgba(0, 0, 0, 0.7),
+        rgba(255, 255, 255, 0.3)
+      );
+      border-radius: 2rem;
+      z-index: 2;
+      backdrop-filter: blur(0.5rem);
   }
   
   .header {
@@ -44,24 +49,43 @@
         color: lightskyblue;
         text-align: center;
         font-size: 100px;
-        background: linear-gradient();
-        
-        
-        
-        
-  }
+        background: linear-gradient(90deg);
+        font-stretch: extra-expanded;
+        text-decoration: underline;  
+      }
 
-  .header {
-    font-stretch: extra-expanded;
-    text-decoration: underline;
-   
-  }
-
-    h3 { 
+    h1 { 
         font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         font-style: italic;
-        font-size: 75;
+        font-size: 75px;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: white;
     }
+    
+    h2 { 
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-style: italic;
+      font-size: 35px;
+      text-decoration: underline;
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: white;
+  }
+    h3 { 
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-style: italic;
+      font-size: 35px;
+      text-decoration: underline;
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: white;
+  }
+  h4 { 
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: italic;
+    font-size: 25px;
+    text-decoration: underline;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: skyblue;
+}
   
   @media screen and (max-width: 60em) {
     .left {
@@ -74,15 +98,32 @@
   }
 
   .left{
-      color: white;
+      margin-left: 20px;
+      width: 40vw;
+      color: coral;
       text-align: center;
       border-radius: 25px;
       font-size: 25px;
-      background: rgba(0, 0, 0, 0.7);
+      
       
       
   }
-  
+
+  .button {
+    color: skyblue;
+    border-radius: 25px;
+    background: linear-gradient(
+        to right bottom,
+        rgba(0, 0, 0, 0.7),
+        rgba(255, 255, 255, 0.3)
+      );
+      border-radius: 2rem;
+      z-index: 2;
+      backdrop-filter: blur(0.5rem);
+  }
+
+ 
+ 
   @media screen and (max-width: 60em) {
     .middle {
       -ms-grid-row: 3;
@@ -95,32 +136,15 @@
   }
 
   .middle {
-      color: white;
+      width: 57vw;
+      color: coral;
       text-align: center;
       border-radius: 25px;
       font-size: 25px;
-      background: rgba(0, 0, 0, 0.7);
+      
       
   }
   
-  @media screen and (max-width: 60em) {
-    .right-nav {
-      -ms-grid-row: 4;
-          grid-row-start: 4;
-      -ms-grid-column: 1;
-          grid-column-start: 1;
-      grid-column-end: 4;
-    }
-  }
-
-  .right {
-      color: white;
-      border-radius: 25px;
-      text-align: center;
-      background: rgba(0, 0, 0, 0.7);
-  }
-  
-
   .footer {
     -ms-grid-column: 1;
         grid-column-start: 1;
@@ -128,8 +152,11 @@
   }
   
   .footer {
+      margin-left: 20px;
+      width: 40vw;
       color: white;
       border-radius: 25px;
-      background: rgba(0, 0, 0, 0.7);
+      
   }
  
+  
