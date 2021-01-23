@@ -4,15 +4,15 @@ $("#artistSearch").on("click", function (event) {
   SearchArtist(artist);
 });
 
-$(document).on("click", ".artistbtn", function (event) {
-  // $("#SearchResults").on("click", function (event) {
-  let artistAlbum = $(this).attr("value");
-  // alert(tempCL);
-  // event.preventDefault();
-  // let artistAlbum = $(this).html();
-  // console.log(artistAlbum);
-  SearchAlbums(artistAlbum);
-});
+// $(document).on("click", ".artistbtn", function (event) {
+//   // $("#SearchResults").on("click", function (event) {
+//   let artistAlbum = $(this).attr("value");
+//   // alert(tempCL);
+//   // event.preventDefault();
+//   // let artistAlbum = $(this).html();
+//   // console.log(artistAlbum);
+//   SearchAlbums(artistAlbum);
+// });
 
 function SearchArtist(artist) {
   //starts at input with artist ends at display search results of all artists.

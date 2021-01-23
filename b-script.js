@@ -1,38 +1,18 @@
-$(document).on("click", ".albumbtn", function (event) {
-
-    let LyricArtist = $(this).attr("artist");
-    let LyricAlbum = $(this).attr("value");
-    console.log("Artist " + LyricArtist);
-    console.log("Album " + LyricAlbum);
-    SearchLyrics(LyricArtist);
-
-});
-
+$(document).on("click", ".artistbtn", function (event) {
+    let artistAlbum = $(this).attr("value");
+    SearchLyrics(artistAlbum);
+  });
 
 function SearchLyrics(LyricArtist) {
     console.log("inF Artist " + LyricArtist);
-    // //musixmatch api key:  9ad329a114ae6adb6c4a2c27453f0710
-
-    // //artist.search?q_artist=prodigy&page_size=5
-    // let MMLyricArtist = LyricArtist;
     let MMAPIKey = "&apikey=9ad329a114ae6adb6c4a2c27453f0710";
     let baseURL = "https://api.musixmatch.com/ws/1.1/";
-    // let subsearchURL = "artist.search?q_artist=prodigy";
     let subTracksearchURL = "track.search?";
     let subArtistsearchURL = "artist.search?";
-    let searchType = "&q_artist=";  //justin bieber&page_size=3&page=1&s_track_rating=desc
+    let searchType = "&q_artist="; 
     let resultCNT = "&page_size=5";
     let responseFormat = "format=jsonp&callback=callback";
-
-    // let searchURL = baseURL + subsearchURL + responseFormat +searchType + MMLyricArtist;
     let searchURL = baseURL + subArtistsearchURL + responseFormat + searchType + LyricArtist + MMAPIKey;
-    // let searchURL = "https://api.musixmatch.com/ws/1.1/artist.search?format=jsonp&callback=callback&q_artist=p!nk&apikey=9ad329a114ae6adb6c4a2c27453f0710";
-
-    // let searchURL = "http://api.musixmatch.com/ws/1.1/track.search?q_artist=justin bieber&page_size=3&page=1&s_track_rating=desc" + MMAPIKey;
-    // let searchURL = "https://api.musixmatch.com/ws/1.1/artist.search?format=jsonp&callback=callback&q_artist=pink";
-
-    // let searchURL = "https://api.musixmatch.com/ws/1.1/matcher.lyrics.get?format=jsonp&callback=callback&q_track=roundabout&q_artist=yes"+MMAPIKey
-    // ​
     console.log(searchURL);
     $.ajax(
         searchURL, {
@@ -58,8 +38,7 @@ function SearchLyrics(LyricArtist) {
 
         let subMMalbumURL = "artist.albums.get?";
         let postiiMMalbumURL = "&artist_id=";
-        let postMMalbumURL = "&s_release_date=desc&g_album_name=1";//"&s_release_date=desc&g_album_name=1"
-        // artist.albums.get?artist_id=****&s_release_date=desc&g_album_name=1
+        let postMMalbumURL = "&s_release_date=desc&g_album_name=1";
         let searchURL = baseURL + subMMalbumURL + responseFormat + postiiMMalbumURL+ targetArtistID + postMMalbumURL + MMAPIKey;
         console.log(searchURL);
         $.ajax(
@@ -70,11 +49,18 @@ function SearchLyrics(LyricArtist) {
         ).then(function (response) {
             console.log("2nd MM Ajax");
             console.log(response);
-
+            $("#albumResults").html("");
+            let nextAlbumHeader = $(`
+            <h3>Album Results for: ${LyricArtist}</h3>
+            `);
+            $("#albumResults").append(nextAlbumHeader);
+            for (let i = 0; i < response.message.body.album_list.length; i++) {
+              let nextButton = $(`
+            <button class="button albumbtn" value="${response.message.body.album_list[i].album.album_name}" artist="${LyricArtist}" albumID="${response.message.body.album_list[i].album.album_id}">${response.message.body.album_list[i].album.album_name}</button>
+            `)
+              $("#albumResults").append(nextButton);
+            }
         });
-
-
-
     });
 
 }
