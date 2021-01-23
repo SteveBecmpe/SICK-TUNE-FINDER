@@ -24,7 +24,6 @@
   
   .left,
   .middle,
-  .right,
   .footer {
     padding: 1rem;
     border: 1px solid #ededed;
@@ -44,7 +43,7 @@
         color: lightskyblue;
         text-align: center;
         font-size: 100px;
-        background: linear-gradient();
+        background: linear-gradient(90deg);
         
         
         
@@ -57,11 +56,31 @@
    
   }
 
-    h3 { 
+    h1 { 
         font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         font-style: italic;
-        font-size: 75;
+        font-size: 75px;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: black;
     }
+    h2 { 
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-style: italic;
+      font-size: 35px;
+      text-decoration: underline;
+  }
+    h3 { 
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-style: italic;
+      font-size: 35px;
+      text-decoration: underline;
+  }
+  h4 { 
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: italic;
+    font-size: 25px;
+    text-decoration: underline;
+}
   
   @media screen and (max-width: 60em) {
     .left {
@@ -103,22 +122,8 @@
       
   }
   
-  @media screen and (max-width: 60em) {
-    .right-nav {
-      -ms-grid-row: 4;
-          grid-row-start: 4;
-      -ms-grid-column: 1;
-          grid-column-start: 1;
-      grid-column-end: 4;
-    }
-  }
 
-  .right {
-      color: white;
-      border-radius: 25px;
-      text-align: center;
-      background: rgba(0, 0, 0, 0.7);
-  }
+  
   
 
   .footer {
