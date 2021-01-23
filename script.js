@@ -6,8 +6,8 @@ $("#artistSearch").on("click", function (event) {
   SearchArtist(artist);
 });
 
-$(document).on("click", ".artistbtn", function(event){
-// $("#SearchResults").on("click", function (event) {
+$(document).on("click", ".artistbtn", function (event) {
+  // $("#SearchResults").on("click", function (event) {
   let artistAlbum = $(this).attr("value");
   // alert(tempCL);
   // event.preventDefault();
@@ -46,6 +46,11 @@ function SearchArtist(artist) {//starts at input with artist ends at display sea
     // console.log(response);
     // console.log(response.artists.length);
     $("#SearchResults").html("");
+    let nextHeader = $(`
+    <h3>Results for: ${artist}</h3>
+    `)
+    $("#SearchResults").append(nextHeader);
+
     for (let i = 0; i < response.artists.length; i++) {
       console.log(response.artists[i].strArtist);
       let nextButton = $(`
@@ -53,6 +58,10 @@ function SearchArtist(artist) {//starts at input with artist ends at display sea
       `)
       $("#SearchResults").append(nextButton);
     }
+    let nextAlbums = $(`
+    <div id="albumResults"></div>
+    `)
+    $("#SearchResults").append(nextAlbums);
     // $("#genre").text(response.artists[0].strStyle);
     // $("#country").text(response.artists[0].strCountry);
     // $("#artistBio").text(response.artists[0].strBiographyEN);
@@ -88,13 +97,17 @@ function SearchAlbums(artist) {//starts at artist search results, ends at output
     // console.log("response object " +response);
     // console.log(response);
     // console.log(response.artists.length);
-    $("#outputs").html("");
+    $("#albumResults").html("");
+    let nextAlbumHeader = $(`
+    <h3>Album Results for: ${artist}</h3>
+    `)
+    $("#albumResults").append(nextAlbumHeader);
     for (let i = 0; i < response.album.length; i++) {
       console.log(response.album[i].strAlbum);
       let nextButton = $(`
     <button class="button">${response.album[i].strAlbum}</button>
     `)
-      $("#outputs").append(nextButton);
+      $("#albumResults").append(nextButton);
     }
     // $("#genre").text(response.artists[0].strStyle);
     // $("#country").text(response.artists[0].strCountry);
