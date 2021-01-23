@@ -9,11 +9,11 @@ $(document).on("click", ".albumbtn", function (event) {
     SearchTracks(MMalbumID, MMalbumName);
 });
 
-// $(document).on("click", ".albumbtn", function (event) {
-//     let MMalbumID = $(this).attr("albumID");
-//     let MMalbumName = $(this).attr("value");
-//     SearchTracks(MMalbumID, MMalbumName);
-// });
+$(document).on("click", ".trackbtn", function (event) {
+    let MMartistName = $(this).attr("artistName");
+    let MMtrackName = $(this).attr("trackName");
+    SearchLyrics(MMartistName, MMtrackName);
+});
 
 function SearchMMAlbums(LyricArtist) {
     console.log("inF Artist " + LyricArtist);
@@ -78,12 +78,7 @@ function SearchMMAlbums(LyricArtist) {
             $("#SearchResults").append(nextTracks);
         });
     });
-    // Calls Artist Info
     let baseArtistURL = "https://theaudiodb.com/api/v1/json/1/search.php?s=";
-    // let baseAlbumFromArtistURL =
-    //     "https://theaudiodb.com/api/v1/json/1/searchalbum.php?s=";
-
-    // let searchURL = baseURL + artist+wildCard;
     let searchArtistURL = baseArtistURL + LyricArtist;
     $.ajax({
         url: searchArtistURL,
@@ -95,17 +90,13 @@ function SearchMMAlbums(LyricArtist) {
         $("#country").text(response.artists[0].strCountry);
         $("#artistBio").text(response.artists[0].strBiographyEN);
     });
-
 }
 
 function SearchTracks(MMalbumID, AlbumName) {
-    // album.tracks.get?album_id=*******&page=1&page_size=2
     let MMAPIKey = "&apikey=9ad329a114ae6adb6c4a2c27453f0710";
     let baseURL = "https://api.musixmatch.com/ws/1.1/";
     let subTracksearchURL = "album.tracks.get?";
-    //    let subArtistsearchURL = "artist.search?";
     let searchType = "&album_id=";
-    // let resultCNT = "&page=1&page_size=2";
     let resultCNT = "&page=1";
     let responseFormat = "format=jsonp&callback=callback";
     let searchURL = baseURL + subTracksearchURL + responseFormat + searchType + MMalbumID + resultCNT + MMAPIKey;
@@ -128,7 +119,52 @@ function SearchTracks(MMalbumID, AlbumName) {
         `)
             $("#TrackResults").append(nextButton);
         }
+        let nextLyrics = $(`
+        <div id="LyricsResults"></div>
+        `);
+        $("#SearchResults").append(nextLyrics);
+    });
+};
+
+function SearchLyrics(ArtistName, TrackName) {
+    let MMAPIKey = "&apikey=9ad329a114ae6adb6c4a2c27453f0710";
+    let baseURL = "https://api.musixmatch.com/ws/1.1/";
+    let subLyricSearchURL = "matcher.lyrics.get?";
+    let subArtistSearchURL = "&q_artist=";
+    let searchType = "&q_track=";
+    let responseFormat = "format=jsonp&callback=callback";
+    let searchURL = baseURL + subLyricSearchURL + responseFormat + searchType + TrackName + subArtistSearchURL + ArtistName + MMAPIKey;
+
+    $.ajax(
+        searchURL, {
+        method: "GET",
+        dataType: "jsonp"
+    }
+    ).then(function (response) {
+        console.log("lyric Object");
+        console.log(response);
+        let LyricResponse = response;
+        $("#LyricsResults").html("");
+        let nextLyricHeader = $(`
+        <h3>Lyric Results for: ${TrackName}</h3>
+        `);
+        $("#LyricsResults").append(nextLyricHeader);
+        console.log(LyricResponse.message.header.status_code);
+        let numberOfStatusCode = Number(LyricResponse.message.header.status_code);
+        if ((numberOfStatusCode != 404) && (response.message.body.lyrics.lyrics_body != "")) {//stops 404 status and "" lyric body's
+            console.log("inside if");
+            let nextLyric = $(`
+        <p class="lyrics" trackName="${TrackName}" trackArtist="${ArtistName}" type="lyrics">${response.message.body.lyrics.lyrics_body}</p>
+        <p class="lyrics" trackName="${TrackName}" trackArtist="${ArtistName}" type="Copyrights">${response.message.body.lyrics.lyrics_copyright}</p>
+        `)
+            $("#LyricsResults").append(nextLyric);
+        } else {
+            console.log("body length !> 0");
+            let nextLyric = $(`
+            <p class="lyrics" trackName="${TrackName}" trackArtist="${ArtistName}" type="lyrics">Sorry No lyrics in the Music Match data base to load</p>
+            `)
+            $("#LyricsResults").append(nextLyric);
+        }
     });
 
-
-};
+}
