@@ -52,7 +52,7 @@ function SearchArtist(artist) {//starts at input with artist ends at display sea
     $("#SearchResults").append(nextHeader);
 
     for (let i = 0; i < response.artists.length; i++) {
-      console.log(response.artists[i].strArtist);
+      // console.log(response.artists[i].strArtist);
       let nextButton = $(`
       <button class="button artistbtn" value="${response.artists[i].strArtist}">${response.artists[i].strArtist}</button>
       `)
@@ -103,9 +103,9 @@ function SearchAlbums(artist) {//starts at artist search results, ends at output
     `)
     $("#albumResults").append(nextAlbumHeader);
     for (let i = 0; i < response.album.length; i++) {
-      console.log(response.album[i].strAlbum);
+      // console.log(response.album[i].strAlbum);
       let nextButton = $(`
-    <button class="button">${response.album[i].strAlbum}</button>
+    <button class="button albumbtn" value="${response.album[i].strAlbum}" artist="${artist}">${response.album[i].strAlbum}</button>
     `)
       $("#albumResults").append(nextButton);
     }
