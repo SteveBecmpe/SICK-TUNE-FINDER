@@ -15,7 +15,7 @@
 - If artist buttons are NOT created try the artist search again using more word, less words, or different words.
 - Clicking on an artist button will generate the available albums and create buttons for further drill down.
 - Clicking on the artist generate the subgenre, genre, artist city and biography in the right window area.
-![Step 2 Selecting Artist to generate album list](./assets/STF_3_Artist_Searched.PNG)
+![Step 2 Selecting Artist to generate album list](./assets/STF_3_Artist_Selected.PNG)
 
 # Step 3. Choose an album
 - Selecting an album button will generate a list of available tracks.
