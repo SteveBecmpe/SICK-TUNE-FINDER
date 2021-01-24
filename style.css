@@ -19,7 +19,7 @@
   }
   
   body {
-    background-image: url("https://images.unsplash.com/photo-1607443359980-ea21b1a3b2b3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
+    background-image: url("https://images.unsplash.com/photo-1598363943803-54a01af6fec1?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1650&q=80");
 }
   
   .left,
@@ -53,39 +53,6 @@
         font-stretch: extra-expanded;
         text-decoration: underline;  
       }
-
-    h1 { 
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        font-style: italic;
-        font-size: 75px;
-        -webkit-text-stroke-width: 2px;
-        -webkit-text-stroke-color: white;
-    }
-    
-    h2 { 
-      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-      font-style: italic;
-      font-size: 35px;
-      text-decoration: underline;
-      -webkit-text-stroke-width: 2px;
-      -webkit-text-stroke-color: white;
-  }
-    h3 { 
-      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-      font-style: italic;
-      font-size: 35px;
-      text-decoration: underline;
-      -webkit-text-stroke-width: 2px;
-      -webkit-text-stroke-color: white;
-  }
-  h4 { 
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-style: italic;
-    font-size: 25px;
-    text-decoration: underline;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: skyblue;
-}
   
   @media screen and (max-width: 60em) {
     .left {
@@ -105,25 +72,9 @@
       border-radius: 25px;
       font-size: 25px;
       
-      
-      
-  }
+     }
 
-  .button {
-    color: skyblue;
-    border-radius: 25px;
-    background: linear-gradient(
-        to right bottom,
-        rgba(0, 0, 0, 0.7),
-        rgba(255, 255, 255, 0.3)
-      );
-      border-radius: 2rem;
-      z-index: 2;
-      backdrop-filter: blur(0.5rem);
-  }
-
- 
- 
+  
   @media screen and (max-width: 60em) {
     .middle {
       -ms-grid-row: 3;
@@ -158,5 +109,59 @@
       border-radius: 25px;
       
   }
+
+  h1 { 
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: italic;
+    font-size: 75px;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: white;
+}
+
+h2 { 
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-style: italic;
+  font-size: 35px;
+  text-decoration: underline;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: white;
+}
+h3 { 
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-style: italic;
+  font-size: 35px;
+  text-decoration: underline;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: white;
+}
+h4 { 
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+font-style: italic;
+font-size: 25px;
+text-decoration: underline;
+-webkit-text-stroke-width: 2px;
+-webkit-text-stroke-color: black;
+}
  
-  
+  .input {
+    background: linear-gradient(
+        to right bottom,
+        rgba(0, 0, 0, 0.7),
+        rgba(255, 255, 255, 0.3)
+      );
+    
+  }
+
+  .button {
+    color: skyblue;
+    border-radius: 25px;
+    background: linear-gradient(
+        to right bottom,
+        rgba(0, 0, 0, 0.7),
+        rgba(255, 255, 255, 0.3)
+      );
+      border-radius: 2rem;
+      z-index: 2;
+      backdrop-filter: blur(0.5rem);
+  }
+
