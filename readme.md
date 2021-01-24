@@ -29,7 +29,7 @@
 # Links
 * GitHub repo links here: 
 [https](https://github.com/SteveBecmpe/1stCollaborative.git)
-[SSH](git@github.com:SteveBecmpe/1stCollaborative.git)
+-[SSH]"git@github.com:SteveBecmpe/1stCollaborative.git"
 
 * Deployed link here: 
 [Live Web link](https://stevebecmpe.github.io/1stCollaborative/)
