@@ -1,7 +1,20 @@
 $("#artistSearch").on("click", function (event) {
   let artist = $("#StartSearchValue").val();
+  $("#StartSearchValue").val("");//should clear the input text... need to add value to the html i think
   console.log(artist);
   SearchArtist(artist);
+});
+
+let input = document.getElementById("StartSearchValue");//press enter is the same as clicking artist button
+// Execute a function when the user releases a key on the keyboard
+input.addEventListener("keyup", function (event) {
+    // Number 13 is the "Enter" key on the keyboard
+    if (event.keyCode === 13) {
+        // Cancel the default action, if needed
+        event.preventDefault();
+        // Trigger the button element with a click
+        document.getElementById("artistSearch").click();//click the artist button when enter is press while in the input box
+    }
 });
 
 // $(document).on("click", ".artistbtn", function (event) {
