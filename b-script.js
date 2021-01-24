@@ -65,7 +65,7 @@ function SearchMMAlbums(LyricArtist) {
             let nextAlbumHeader = $(`
             <h3>Album Results for: ${LyricArtist}</h3>
             `);
-            $("#albumResults").append(nextAlbumHeader);//---------------------------------------------------
+            $("#albumResults").append(nextAlbumHeader);
             for (let i = 0; i < response.message.body.album_list.length; i++) {
                 let nextButton = $(`
             <button class="button albumbtn" value="${response.message.body.album_list[i].album.album_name}" artist="${LyricArtist}" albumID="${response.message.body.album_list[i].album.album_id}">${response.message.body.album_list[i].album.album_name}</button>
@@ -166,5 +166,4 @@ function SearchLyrics(ArtistName, TrackName) {
             $("#LyricsResults").append(nextLyric);
         }
     });
-
 }
