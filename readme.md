@@ -19,11 +19,11 @@
 
 # Step 3. Choose an album
 - Selecting an album button will generate a list of available tracks.
-- [Step 3 Selecting Album to generate track list](./assets/STF_4_Album_Selected.PNG)
+![Step 3 Selecting Album to generate track list](./assets/STF_4_Album_Selected.PNG)
 
 # Step 4. Choose a Track
 - Selecting a track will generate 30% of any available lyrics along with a disclaimer and Copyright information.
-- [Step 4 Selectting Track to generate lyrics](./assets/STF_5_Song_Selected.PNG)
+![Step 4 Selectting Track to generate lyrics](./assets/STF_5_Song_Selected.PNG)
 
 
 # Links
