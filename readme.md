@@ -28,11 +28,11 @@
 
 # Links
 * GitHub repo links
-- [https](https://github.com/SteveBecmpe/1stCollaborative.git)
-- [SSH] git@github.com:SteveBecmpe/1stCollaborative.git
+[https](https://github.com/SteveBecmpe/1stCollaborative.git)
+[SSH] git@github.com:SteveBecmpe/1stCollaborative.git
 
 * Deployed link
-- [Live Web link](https://stevebecmpe.github.io/1stCollaborative/)
+[Live Web link](https://stevebecmpe.github.io/1stCollaborative/)
 
 # Future Developement Plans
 - mobile fit for cell phone use
